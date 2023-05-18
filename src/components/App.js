@@ -38,23 +38,23 @@ const App = () => {
     }
     else if(e.target.value==2018){
       setSelectedYear("Selected year-2018");
-      setYear(2018);
+      setYear('2018');
     }
     else if(e.target.value==2019){
       setSelectedYear("Selected year-2019");
-      setYear(2019);
+      setYear('2019');
     }
     else if(e.target.value==2020){
       setSelectedYear("Selected year-2020");
-      setYear(2020);
+      setYear('2020');
     }
     else if(e.target.value==2021){
       setSelectedYear("Selected year-2021");
-      setYear(2021);
+      setYear('2021');
     }
     else{
       setSelectedYear("Selected year-2022");
-      setYear(2022);
+      setYear('2022');
     }
     
   }
@@ -72,8 +72,8 @@ const App = () => {
       <div id='selected-year'>
            {selectedYear}<br></br>
            <ul>
-           {Object.keys(data).map((index)=>
-            <li key={index}>{data[year]}</li>
+           {data[year] && data[year].map((movies,index)=>
+            <li key={index*year}>{movies}</li>
            )}
            </ul>
       </div>
